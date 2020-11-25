@@ -81,10 +81,10 @@ void landPiece()
     display.setCursor(32, 40);
     display.println(F("Game Over!"));
     display.display();
-  
+
      while (true){delay(10000);}
   }
-  
+
   for (int y = 0; y < 4; ++y)
   {
     int screenY = y + pieceY;
@@ -132,7 +132,7 @@ void loop()
     current[2] = 0b0001100000000000;
     current[3] = 0b0000000000000000;
   }
-  
+
   display.clearDisplay();
   for (int y = 0; y < VBlocks; ++y)
   {
@@ -160,7 +160,7 @@ void loop()
   const bool left = digitalRead(6) == HIGH;
   const bool down = digitalRead(7) == HIGH;
   const bool up = digitalRead(8) == HIGH;
-  
+
   if (willLand())
   {
     landPiece();
@@ -171,7 +171,7 @@ void loop()
       tryMoveLeft();
     if (right)
       tryMoveRight();
-  
+
     if (willLand())
     {
       landPiece();
